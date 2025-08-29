@@ -21,7 +21,7 @@ export default function App() {
           { key: 'Home button' },
           { key: 'Analog sticks' },
         ]}
-        
+
         renderItem={({ item }) => <Text style={styles.description}>{item.key}</Text>}
         keyExtractor={item => item.key}
       />
@@ -30,6 +30,7 @@ export default function App() {
       <TouchableOpacity onPress={() => alert('This is a touchable opacity component.')}>
         <Text style={{ color: 'green', fontSize: 20, marginTop: 10 }}>Touchable Opacity</Text>
       </TouchableOpacity>
+      
     </View>
     );
   }
