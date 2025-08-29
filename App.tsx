@@ -1,39 +1,35 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, Button, FlatList } from 'react-native';
+import { StyleSheet, Text, View, Image, Button, FlatList, TouchableOpacity } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={{ color: 'blue', fontSize: 25 }}>This is the header for ICE Task 2.</Text>
+      <Text style={{ color: 'blue', fontSize: 25 }}>This is a PlayStation 5 controller.</Text>
       <br></br>
       <Image
-        source={{uri: 'https://images.theconversation.com/files/651621/original/file-20250226-32-jxjhmy.jpg?ixlib=rb-4.1.0&rect=0%2C0%2C5991%2C3997&q=20&auto=format&w=320&fit=clip&dpr=2&usm=12&cs=strip'}}
+        source={{uri: 'https://gmedia.playstation.com/is/image/SIEPDC/dualsense-controller-product-thumbnail-01-en-14sep21?$facebook$'}}
         style={styles.image}
       />
       <Text style={styles.description}>
-        This is a local image component.
+        These are some of the components of a DualSense controller.
       </Text>
-      <Image
-        source={
-          require('./assets/music.jpg')}
-        style={styles.image}
-      />
-      <Text style={styles.description}>
-        This is a image component.
-      </Text>
-      <Text style={styles.sectionTitle}>Yeah</Text>
+      <Text style={styles.sectionTitle}>DualSense Parts</Text>
       <FlatList
         data={[
-          { key: 'Item 1' },
-          { key: 'Item 2' },
-          { key: 'Item 3' },
-          { key: 'Item 4' },
+          { key: 'Face buttons' },
+          { key: 'Touchpad' },
+          { key: 'Home button' },
+          { key: 'Analog sticks' },
         ]}
+        
         renderItem={({ item }) => <Text style={styles.description}>{item.key}</Text>}
         keyExtractor={item => item.key}
       />
       <Button title='Click Me!' onPress={() => alert('This is an alert.')} />
       <StatusBar style="auto" />
+      <TouchableOpacity onPress={() => alert('This is a touchable opacity component.')}>
+        <Text style={{ color: 'green', fontSize: 20, marginTop: 10 }}>Touchable Opacity</Text>
+      </TouchableOpacity>
     </View>
     );
   }
